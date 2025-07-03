@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/am-team-website/static/css/main.3b6b4000.css",
+    "main.js": "/am-team-website/static/js/main.686fcf77.js",
+    "static/js/488.20dc1f29.chunk.js": "/am-team-website/static/js/488.20dc1f29.chunk.js",
+    "service-worker.js": "/am-team-website/service-worker.js",
+    "index.html": "/am-team-website/index.html",
+    "main.3b6b4000.css.map": "/am-team-website/static/css/main.3b6b4000.css.map",
+    "main.686fcf77.js.map": "/am-team-website/static/js/main.686fcf77.js.map",
+    "488.20dc1f29.chunk.js.map": "/am-team-website/static/js/488.20dc1f29.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3b6b4000.css",
+    "static/js/main.686fcf77.js"
+  ]
+}
