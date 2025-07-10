@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { EnvelopeIcon, CheckCircleIcon, ExclamationCircleIcon, CubeTransparentIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, CheckCircleIcon, CubeTransparentIcon } from '@heroicons/react/24/outline';
 import { useForm, ValidationError } from '@formspree/react';
 
 // LinkedIn profile images (use as <img src={...} />)
@@ -184,6 +184,7 @@ const TRANSLATIONS = {
     projectsList: [
       {
         title: 'Additive Manufacturing of WC-12Co',
+        useCase: true,
         bullets: [
           'Near-net-shape cemented carbide parts with more than <b>99% density</b>',
           'Hardness more than <b>1200 HV<sub>100</sub></b> and TRS higher than <b>2200 MPa</b>',
@@ -193,6 +194,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'WC-HEA Cemented Carbide',
+        useCase: true,
         bullets: [
           'Development of CALPHAD designed sustainable cobalt-free high entropy alloy',
           'Enhanced hardness, higher than <b>1900 HV<sub>100</sub></b>.',
@@ -202,6 +204,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Nb-based alloy for Extreme Temperature',
+        useCase: true,
         bullets: [
           'Spherical powder of complex Nb-Si-Al-Ti-Cr-Zr-Fe-Hf-Mo alloy developed for additive manufacturing',
           'Engineered for aerospace and energy application. <b>760 MPa</b> @ 1200°С; <b>380 MPa</b> @ 1300°С',
@@ -211,6 +214,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Recycled Powder for Sustainable Additive Manufacturing',
+        useCase: true,
         bullets: [
           'Recycling machining waste into AM-ready powders, <b>95%+ sphericity</b>',
           'Up to <b>80%</b> reduction in feedstock cost for high-alloy steel',
@@ -222,105 +226,112 @@ const TRANSLATIONS = {
   },
   it: {
     hero: {
-      tagline: 'Soluzioni per l\'additive manufacturing per l\'industria',
-      subline: 'Guidati da onestà ed esperienza',
+      tagline: 'Soluzioni di additive\u202Fmanufacturing per l\u2019industria',
+      subline: 'Con integrità e competenza',
       cta: 'Avvia un progetto',
     },
     services: 'I nostri servizi',
-    projects: 'Progetti e Portfolio',
+    projects: 'Progetti & Portfolio',
     about: 'Chi siamo',
     contact: 'Contattaci',
     name: 'Nome',
     email: 'Email',
-    message: 'Messaggio',
-    consent: 'Acconsento che questo sito memorizzi le informazioni inviate per rispondere alla mia richiesta.',
+    message: 'Messagio',
+    consent: 'Acconsento che questo sito web memorizzi le mie informazioni inviate per rispondere alla mia richiesta',
     submit: 'Invia',
     thankyou: 'Grazie per averci contattato!',
     required: 'Obbligatorio',
     invalidEmail: 'Indirizzo email non valido',
     consentRequired: 'Il consenso è obbligatorio',
-    cookies: 'Questo sito utilizza i cookie per garantirti la migliore esperienza.',
-    accept: 'Accetta',
+    cookies: 'Questo sito utilizza i cookie per offrirti la migliore esperienza possibile. Utilizziamo cookie tecnici necessari e, previo consenso, cookie analitici e di marketing. Puoi accettare tutti i cookie, solo quelli necessari o personalizzare le tue preferenze.',
+    accept: 'Accetta tutti',
     privacy: 'Privacy Policy',
     impressum: 'Impressum',
     comingSoon: 'In arrivo',
+    onlyNecessary: 'Solo necessari',
+    customize: 'Personalizza',
+    savePreferences: 'Salva preferenze',
     team: [
       {
         name: 'Ivan Goncharov',
-        title: 'AM Materials expert',
-        bio: 'Materials scientist with over 10 years of experience in powder metallurgy, alloy development and additive manufacturing. Dual PhD in the design of high-performance materials for extreme environments, such as cemented carbides, high-temperature alloys, functional materials. CALPHAD simulation, Binder Jetting, Laser Bed Powder Bed Fusion, Plasma Spheroidizaion, Ultrasonic Atomization, Spark Plasma Sintering. 20+ Scientific publications. Led and worked on several multidisciplinary international projects from material design to process validation.'
+        title: 'Esperto in Materiali per Manifattura Additiva',
+        bio: 'Scienziato dei materiali con oltre 10 anni di esperienza nella metallurgia delle polveri, nello sviluppo di leghe e nella manifattura additiva. Dottorato con doppio titolo nella progettazione di materiali ad alte prestazioni per ambienti estremi, tra cui carburi cementati, leghe per alte temperature e materiali funzionali. Esperto in simulazione CALPHAD, Binder Jetting, Laser Powder Bed Fusion, sferoidizzazione al plasma, atomizzazione ultrasonica e sinterizzazione al plasma (SPS). Autore di oltre 20 pubblicazioni scientifiche. Ha coordinato e partecipato a numerosi progetti internazionali multidisciplinari, dalla progettazione dei materiali fino alla validazione del processo.'
       },
       {
         name: 'Benjamin Meier-Leeb',
-        title: 'AM Process expert',
-        bio: 'Mechanical engineer with 10+ years of experience in additive manufacturing process development, material and powder behavior characterization across research institutes and industry. PhD in Laser Powder Based Fusion with wide exposure on titanium alloys, special steels, aluminium alloys and functional materials. CAD, Laser and Electron Beam Powder Bed Fusion, Laser Directed Energy Deposition. 15+ scientific publications. Led and contributed to numerous European R&D projects in Austria and Italy.'
+        title: 'Esperto di Processi di Manifattura Additiva',
+        bio: 'Ingegnere meccanico con oltre 10 anni di esperienza nello sviluppo dei processi di manifattura additiva e nella caratterizzazione dei materiali e del comportamento delle polveri, sia in ambito accademico che industriale. Dottorato in Laser Powder Based Fusion, con ampia esperienza su leghe di titanio, acciai speciali, leghe di alluminio e materiali funzionali. Competenze in CAD, Laser e Electron Beam Powder Bed Fusion, Laser Directed Energy Deposition. Autore di oltre 15 pubblicazioni scientifiche. Ha coordinato e contribuito a numerosi progetti europei di ricerca e sviluppo in Austria e in Italia.'
       },
       {
         name: 'Michele Zanetti',
-        title: 'AM Machines expert',
-        bio: 'Application and Service Engineer with over 5 years of experience in industrial additive manufacturing. Laser Powder Bed Fusion, Stereolithography, Selective Laser Sintering, Fused Filament Fabrication. Vast hands-on experience with hardware from installation to maintenance and training enables to form expert unbiased opinions and technical in-field depth helps to guide customers with technology transfer.'
+        title: 'Esperto di Macchine per la Manifattura Additiva',
+        bio: 'Application and Service Engineer con oltre 5 anni di esperienza nella manifattura additiva industriale. Competenze in Laser Powder Bed Fusion, Stereolitografia, Selective Laser Sintering e Fused Filament Fabrication. Vasta esperienza pratica con l’hardware, dall’installazione alla manutenzione e alla formazione, che consente di offrire valutazioni tecniche imparziali e supportare i clienti nel trasferimento tecnologico grazie a una solida competenza operativa sul campo.'
       }
     ],
     servicesList: [
       {
-        title: 'Sviluppo di leghe',
-        desc: 'Leghe personalizzate e soluzioni di materiali per applicazioni AM avanzate.'
+        title: 'Sviluppo Leghe Metalliche',
+        desc: 'Soluzioni su misura per la progettazione e l’ottimizzazione di leghe avanzate per applicazioni AM.'
       },
       {
-        title: 'Progettazione di parti/componenti per AM',
-        desc: 'Progettazione ottimizzata per la producibilità e le prestazioni in AM.'
+        title: 'Design di componenti ottimizzati per AM',
+        desc: 'Progettazione ottimizzata per la producibilità, la resistenza e la riduzione del peso nei processi additivi.'
       },
       {
-        title: 'Consulenza ingegneristica',
-        desc: 'Consulenza esperta su processi AM, materiali e implementazione.'
+        title: 'Consulenza Ingegneristica',
+        desc: 'Supporto tecnico esperto su processi AM, materiali e implementazione industriale.'
       },
       {
-        title: 'Prototipazione e validazione',
-        desc: 'Prototipazione rapida e validazione approfondita per esigenze industriali.'
+        title: 'Prototipazione e Validazione',
+        desc: 'Sviluppo rapido di prototipi e validazione tecnica secondo gli standard industriali.'
       },
       {
-        title: 'Produzione in piccoli lotti',
-        desc: 'Produzione efficiente e di alta qualità di componenti in piccole serie.'
+        title: 'Produzione in Piccole Serie',
+        desc: 'Produzione efficiente e di alta qualità per piccoli lotti e componenti in serie.'
       },
       {
-        title: 'Documentazione e conformità',
-        desc: 'Documentazione completa e supporto normativo.'
+        title: 'Documentazione e Conformità',
+        desc: 'Documentazione tecnica completa e supporto alla conformità normativa.'
       }
     ],
     projectsList: [
       {
-        title: 'Additive Manufacturing di WC-12Co',
+        title: 'Produzione Additiva di WC-12Co',
+        useCase: true,
         bullets: [
-          'Parti in carburo cementato near-net-shape con oltre <b>99% di densità</b>',
-          'Durezza superiore a <b>1200 HV<sub>100</sub></b> e TRS superiore a <b>2200 MPa</b>',
-          'Permette design flessibili per utensili e parti di usura, con prestazioni pari agli standard industriali.'
+          'Parti in carburo cementato quasi a forma finita con densità superiore al <b>99%</b>.',
+          'Durezza oltre <b>1200 HV<sub>100</sub></b> e TRS superiore a <b>2200 MPa</b>.',
+          'Permette design flessibili per utensili e parti antiusura, con prestazioni equivalenti agli standard industriali.'
         ],
-        tech: 'Carburo cementato, BJAM'
+        tech: 'Cemented Carbide, BJAM'
       },
       {
-        title: 'WC-HEA Carburo cementato',
+        title: 'WC-HEA Cemented Carbide',
+        useCase: true,
         bullets: [
-          'Sviluppo di una lega ad alta entropia sostenibile e priva di cobalto progettata con CALPHAD',
-          'Durezza migliorata, superiore a <b>1900 HV<sub>100</sub></b>.',
-          'Carburo cementato di nuova generazione con microstruttura a grana fine grazie all\'inibizione della crescita dei grani e costi ridotti tramite l\'uso di materie prime riciclate.'
+          'Sviluppo di una lega ad alta entropia senza cobalto sostenibile, progettata con CALPHAD.',
+          'Durezza superiore a <b>1900 HV<sub>100</sub></b>.',
+          'Carburo cementato di nuova generazione, con microstruttura a grana fine grazie all’inibizione della crescita dei grani e a costi ridotti tramite l’uso di materie prime riciclate.'
         ],
-        tech: 'CALPHAD, Atomizzazione ultrasonica'
+        tech: 'CALPHAD, Ultrasonic atomization'
       },
       {
-        title: 'Lega a base Nb per temperature estreme',
+        title: 'Lega a base di Nb per temperature estreme',
+        useCase: true,
         bullets: [
-          'Polvere sferica di lega complessa Nb-Si-Al-Ti-Cr-Zr-Fe-Hf-Mo sviluppata per additive manufacturing',
-          'Progettata per applicazioni aerospaziali ed energetiche. <b>760 MPa</b> @ 1200°С; <b>380 MPa</b> @ 1300°С',
-          'Workflow completo dal design della lega alla validazione con L-PBF e SPS'
+          'Polvere sferica sviluppata di lega complessa Nb-Si-Al-Ti-Cr-Zr-Fe-Hf-Mo per la manifattura additiva',
+          'Progettata per applicazioni aerospaziali ed energetiche: <b>760 MPa</b> a 1200 °C, <b>380 MPa</b> a 1300 °C',
+          'Workflow completo: dalla progettazione della lega alla validazione con L-PBF e SPS'
         ],
-        tech: 'Nb-Si, Sferoidizzazione al plasma, L-PBF'
+        tech: 'Nb-Si, Plasma Spheroidization, L-PBF'
       },
       {
-        title: 'Polvere riciclata per additive manufacturing sostenibile',
+        title: 'Polveri riciclate per una manifattura additiva sostenibile',
+        useCase: true,
         bullets: [
-          'Riciclo degli scarti di lavorazione in polveri pronte per AM, <b>sfericità superiore al 95%</b>',
-          'Fino a <b>80%</b> di riduzione del costo della materia prima per acciai altolegati',
-          'Verifiziert durch L-PBF und L-DED: hohe Festigkeit, duttilità migliorata dopo trattamento termico'
+          'Riciclo di scarti di lavorazione in polveri sferiche pronte per la manifattura additiva (sfericità > <b>95%</b>)',
+          'Riduzione dei costi della materia prima fino all’<b>80%</b> per acciai altolegati',
+          'Prestazioni verificate con L-PBF e L-DED: elevata resistenza e duttilità migliorata dopo trattamento termico'
         ],
         tech: 'Recycling; L-PBF, L-DED'
       }
@@ -396,6 +407,7 @@ const TRANSLATIONS = {
     projectsList: [
       {
         title: 'Additive Fertigung von WC-12Co',
+        useCase: true,
         bullets: [
           'Hartmetallteile in Near-Net-Shape mit mehr als <b>99% Dichte</b>',
           'Härte über <b>1200 HV<sub>100</sub></b> und TRS über <b>2200 MPa</b>',
@@ -405,6 +417,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'WC-HEA Hartmetall',
+        useCase: true,
         bullets: [
           'Entwicklung einer nachhaltigen, kobaltfreien Hochentropielegierung nach CALPHAD-Design',
           'Erhöhte Härte, über <b>1900 HV<sub>100</sub></b>.',
@@ -414,6 +427,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Nb-basierte Legierung für extreme Temperaturen',
+        useCase: true,
         bullets: [
           'Sphärisches Pulver aus komplexer Nb-Si-Al-Ti-Cr-Zr-Fe-Hf-Mo-Legierung für die additive Fertigung entwickelt',
           'Für Luft- und Raumfahrt sowie Energieanwendungen entwickelt. <b>760 MPa</b> @ 1200°С; <b>380 MPa</b> @ 1300°С',
@@ -423,6 +437,7 @@ const TRANSLATIONS = {
       },
       {
         title: 'Recyceltes Pulver für nachhaltige additive Fertigung',
+        useCase: true,
         bullets: [
           'Recycling von Bearbeitungsabfällen zu AM-fähigen Pulvern, <b>über 95% Sphärizität</b>',
           'Bis zu <b>80%</b> Kosteneinsparung beim Rohmaterial für hochlegierten Stahl',
@@ -441,7 +456,6 @@ function classNames(...classes) {
 function App() {
   const [lang, setLang] = useState('en');
   const t = TRANSLATIONS[lang];
-  const [showThankYou, setShowThankYou] = useState(false);
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
   const [cookiesNecessary, setCookiesNecessary] = useState(false);
   const [showCustomize, setShowCustomize] = useState(false);
@@ -548,10 +562,9 @@ function App() {
         <section className="py-16" id="services">
           <h2 className="text-2xl font-bold text-primary mb-8 text-center">{t.services}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {SERVICES.map(s => (
+            {(t.servicesList || SERVICES).map((s, i) => (
               <div key={s.title} className="bg-white rounded-xl shadow p-6 flex flex-col items-center text-center border border-gray-100 hover:shadow-lg transition">
-                {s.icon && <s.icon className="h-10 w-10 text-primary mb-4" />}
-                {s.img && <img src={s.img} alt={s.title} className="h-10 w-10 mb-4" />}
+                {SERVICES[i]?.img && <img src={SERVICES[i].img} alt={s.title} className="h-10 w-10 mb-4" />}
                 <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
                 <p className="text-gray-600 text-sm">{s.desc}</p>
               </div>
@@ -563,7 +576,7 @@ function App() {
         <section className="py-16" id="projects">
           <h2 className="text-2xl font-bold text-primary mb-8 text-center">{t.projects}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {PROJECTS.map((p, i) => (
+            {(t.projectsList || PROJECTS).map((p, i) => (
               <div key={p.title} className="bg-white rounded-xl shadow p-8 flex flex-col items-center text-center border border-gray-100 hover:shadow-2xl transition min-h-[420px]">
                 {/* Show use case with bullets and rich text if present */}
                 {p.useCase ? (
@@ -579,17 +592,17 @@ function App() {
                         <span className="inline-block bg-gray-100 text-primary text-xs px-3 py-1 rounded-full">{p.tech}</span>
                       </div>
                     )}
-                    {p.img && (
+                    {PROJECTS[i]?.img && (
                       <div className="w-full flex justify-center">
-                        <img src={p.img} alt={`Project: ${p.title}`} className="h-48 w-auto object-contain rounded mt-0 mb-1" style={{ marginTop: 0 }} />
+                        <img src={PROJECTS[i].img} alt={`Project: ${p.title}`} className="h-48 w-auto object-contain rounded mt-0 mb-1" style={{ marginTop: 0 }} />
                       </div>
                     )}
                   </>
                 ) : (
                   <>
-                    {p.img ? (
+                    {PROJECTS[i]?.img ? (
                       <div className="w-full flex justify-center">
-                        <img src={p.img} alt={`Project: ${p.title}`} className="h-32 w-auto object-contain mb-4 rounded" />
+                        <img src={PROJECTS[i].img} alt={`Project: ${p.title}`} className="h-32 w-auto object-contain mb-4 rounded" />
                       </div>
                     ) : (
                       <CubeTransparentIcon className="h-16 w-16 text-gray-200 mb-4" />
@@ -616,8 +629,8 @@ function App() {
                   className="w-24 h-24 rounded-full object-cover border border-primary shadow mb-2"
                   onError={e => (e.target.src = 'https://placehold.co/96x96?text=Photo')}
                 />
-                <span className="font-semibold text-lg text-primary">{member.name}</span>
-                <span className="text-primary text-sm mb-4">{member.title}</span>
+                <span className="font-semibold text-lg text-primary text-center w-full">{member.name}</span>
+                <span className="text-primary text-sm mb-4 text-center w-full">{member.title}</span>
                 {(member.name === 'Ivan Goncharov' || member.name === 'Benjamin Meier-Leeb' || member.name === 'Michele Zanetti') ? (
                   <div className="text-gray-600 text-sm mb-2 text-justify w-full flex flex-col justify-between" style={{ minHeight: '210px' }}>
                     {member.bio.split(/(?<=\.) /).filter(Boolean).map((sentence, i) => (
@@ -740,7 +753,7 @@ function App() {
         {!(cookiesAccepted || cookiesNecessary) && (
           <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow z-50 flex flex-col md:flex-row items-center justify-between px-4 py-3 gap-2">
             <span className="text-gray-700 text-sm flex-1">
-              We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. 
+              {t.cookies}
               <a href="/cookie-policy" className="text-primary underline ml-1" target="_blank" rel="noopener noreferrer">Learn more</a>
             </span>
             <div className="flex gap-2">
@@ -748,19 +761,19 @@ function App() {
                 className="px-4 py-2 bg-primary text-white rounded font-semibold shadow hover:bg-primary-dark transition"
                 onClick={handleAcceptAllCookies}
               >
-                Accept All
+                {t.accept}
               </button>
               <button
                 className="px-4 py-2 bg-gray-200 text-primary rounded font-semibold shadow hover:bg-gray-300 transition"
                 onClick={handleOnlyNecessaryCookies}
               >
-                Only Necessary
+                {t.onlyNecessary || 'Only Necessary'}
               </button>
               <button
                 className="px-4 py-2 bg-white text-primary border border-primary rounded font-semibold shadow hover:bg-gray-100 transition"
                 onClick={handleCustomizeCookies}
               >
-                Customize
+                {t.customize || 'Customize'}
               </button>
             </div>
           </div>
