@@ -452,7 +452,7 @@ const TRANSLATIONS = {
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
-
+ 
 function App() {
   const [lang, setLang] = useState('en');
   const t = TRANSLATIONS[lang];
