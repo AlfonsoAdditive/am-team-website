@@ -459,7 +459,6 @@ function App() {
   const [cookiesAccepted, setCookiesAccepted] = useState(false);
   const [cookiesNecessary, setCookiesNecessary] = useState(false);
   const [showCustomize, setShowCustomize] = useState(false);
-  const [showImpressum, setShowImpressum] = useState(false);
 
   // Add Formspree hook
   const [state, handleSubmit] = useForm("mwpbyqnj");
@@ -492,12 +491,6 @@ function App() {
   }
   function handleCloseCustomize() {
     setShowCustomize(false);
-  }
-
-  // Impressum toggle
-  function handleImpressumToggle(e) {
-    e.preventDefault();
-    setShowImpressum(prev => !prev);
   }
 
   // Set <html lang> dynamically for accessibility and SEO
